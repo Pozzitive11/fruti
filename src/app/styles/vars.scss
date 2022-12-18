@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=Montserrat:wght@600;700&family=Nerko+One&display=swap');
+:root {
+  --color-white: #ffffff;
+  --color-black: #323232;
+  --color-orange: #c8633a;
+  --color-orange-light: #e45c25;
+  --color-body: #f5f2e3;
+
+  --font-family-comfortaa: 'Comfortaa', cursive;
+  --font-family-montserrat: 'Montserrat', sans-serif;
+  --font-family-nerko: 'Nerko One', cursive;
+
+  --font-weigth-light: 300;
+  --font-weigth-regular: 400;
+  --font-weigth-semibold: 600;
+  --font-weigth-bold: 700;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: var(--font-family-comfortaa);
+  color: var(--color-orange);
+  background-color: var(--color-body);
+}
+
+.container {
+  width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

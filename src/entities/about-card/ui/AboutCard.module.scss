@@ -1,0 +1,17 @@
+.about__item {
+  width: 287px;
+  text-align: center;
+  &_img {
+    margin-bottom: 24px;
+  }
+
+  &_title {
+    margin-bottom: 16px;
+    font-weight: var(--font-weigth-semibold);
+    font-size: 20px;
+  }
+
+  &_text {
+    font-weight: var(--font-weigth-light);
+  }
+}

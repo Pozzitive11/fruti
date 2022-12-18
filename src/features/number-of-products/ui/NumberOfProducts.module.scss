@@ -1,0 +1,17 @@
+.container {
+  background: #efe8c7;
+  border-radius: 6px;
+  padding: 12px 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal {
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}

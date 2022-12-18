@@ -1,0 +1,50 @@
+.footer {
+  padding: 50px 0 88px;
+  background: #efe8c7;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    font-family: var(--font-family-nerko);
+    font-weight: var(--fon-weigth-regular);
+    font-size: 4em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-orange);
+  }
+
+  &__text {
+    width: 207px;
+  }
+
+  &__right {
+    display: flex;
+  }
+
+  &__list {
+    &:not(:last-child) {
+      margin-right: 116px;
+    }
+  }
+
+  &__item {
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 24px;
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: var(--color-orange);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

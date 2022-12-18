@@ -1,0 +1,16 @@
+.button {
+  padding: 8px 22px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--color-orange-light);
+
+  &:hover {
+    background-color: var(--color-orange);
+  }
+
+  img {
+    width: 56px;
+    height: 32px;
+  }
+}
