@@ -3,13 +3,12 @@
 import MainPage from 'pages/main-page/MainPage';
 // import styles from './App.module.css';
 
-
-
 function App() {
+  
   return (
-    <div className=''>
+    <>
       <MainPage />
-    </div>
+    </>
   );
 }
 

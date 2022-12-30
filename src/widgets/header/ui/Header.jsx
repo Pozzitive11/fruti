@@ -1,5 +1,7 @@
-import 'app/index.css';
+import { burger } from 'assets';
+import { Button } from 'shared/ui/button/Button';
 
+import 'app/index.css';
 import styles from './Header.module.scss';
 
 export const Header = () => {
@@ -7,7 +9,12 @@ export const Header = () => {
     <header className={styles.header}>
       <div className="container">
         <div className={styles.header__inner}>
-          <a href="#home" className={styles.header__logo}>Fruti</a>
+          <a href="#home" className={styles.header__logo}>
+            Fruti
+          </a>
+          <Button classes={styles.button}>
+            <img src={burger} alt='Відкрити навігацію'/>
+          </Button>
           <nav className={styles.header__nav}>
             <ul className={styles.header__list}>
               <li className={styles.header__item}>
@@ -41,8 +48,8 @@ export const Header = () => {
             <a className={styles.header__phone} href={'tel:0678337139'}>
               0678337139
             </a>
-            <p className={styles.header__shudule}>Працюємо Пн-Сб,</p>
-            <p className={styles.header__shudule}>Нд-вихідний</p>
+            <p className={styles.header__shedule}>Працюємо Пн-Сб,</p>
+            <p className={styles.header__shedule}>Нд-вихідний</p>
           </address>
         </div>
       </div>

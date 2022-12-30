@@ -1,61 +1,60 @@
 import styles from './NumberOfProducts.module.scss';
 import { minusButton, plusButton, deleteButton } from 'assets';
-import { ProductCardButton } from 'shared/ui/product-card-button/ProductCardButton';
-import { DeleteProduct } from 'features/delete-product/';
+import { Button } from 'shared/ui/button/Button';
 import { useState } from 'react';
 
-import Modal from 'react-modal';
+import { Modal } from 'shared/ui/modal/Modal';
+
+// import Modal from 'react-modal';
 
 export function NumberOfProducts({
   minusProduct,
   addProduct,
   numberOfProducts,
+  deleteFromBasket,
 }) {
-  const [modalIsOpen, setIsOpen] = useState(false);
-  const [smth, setSmth] = useState(false);
+  const [modal, setModal] = useState(false);
+
   function openModal() {
-    setIsOpen(true);
+    setModal(true);
   }
 
   function closeModal() {
-    setIsOpen(false);
-  }
-
-  function deletesmth() {
-    setIsOpen(true);
-
-    setSmth(true);
+    setModal(false);
   }
 
   return (
     <div className={styles.container}>
       {numberOfProducts === 1 ? (
-        <ProductCardButton
-          onClick={deletesmth}
-          img={deleteButton}
-          alt={'Видалити'}
-        />
+        <Button onClick={openModal}>
+          <img src={deleteButton} alt={'Видалити'} />
+        </Button>
       ) : (
-        <ProductCardButton
-          onClick={minusProduct}
-          img={minusButton}
-          alt={'Мінус'}
-        />
+        <Button onClick={minusProduct}>
+          <img src={minusButton} alt={'Мінус'} />
+        </Button>
       )}
       <span className={styles.number}>{numberOfProducts} кг</span>
-      <ProductCardButton onClick={addProduct} img={plusButton} alt={'Плюс'} />
+      <Button onClick={addProduct}>
+        <img src={plusButton} alt={'Плюс'} />
+      </Button>
 
       <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        style={styles.modal}
+        visible={modal}
+        setVisible={setModal}
+        classes={styles.modal__content}
+        onClick={openModal}
       >
-        <div>I am a modal</div>
-        <button onClick={closeModal}>Tak</button>
-        <button onClick={closeModal}>Ni</button>
+        <p className={styles.modal__text}>Видалити товар?</p>
+        <div className={styles.modal__buttons}>
+          <Button classes={styles.button} onClick={deleteFromBasket}>
+            Так
+          </Button>
+          <Button classes={styles.button} onClick={closeModal}>
+            Ні
+          </Button>
+        </div>
       </Modal>
     </div>
   );
 }
-
-// src={numberOfProducts === 1 ? deleteButton : minusButton}

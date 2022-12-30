@@ -1,31 +1,48 @@
 import { useState } from 'react';
-import styles from './ProductCard.module.scss';
-import { AddToBasket } from 'features/add-to-basket/ui/AddToBasket';
+
 import { NumberOfProducts } from 'features/number-of-products';
+import { Button } from 'shared/ui/button/Button';
+import { basketButton } from 'assets';
+import styles from './ProductCard.module.scss';
 
 export const ProductCard = ({ id, title, origin, price, img }) => {
   const [ifAddToBasket, setIfAddToBasket] = useState(false);
   const [numberOfProducts, setNumberOfProducts] = useState(1);
   const [productPrice, setProductPrice] = useState(price);
 
+  const product = {
+    id,
+    price,
+    numberOfProducts,
+  };
 
   const addProduct = () => {
     setNumberOfProducts(numberOfProducts + 1);
     setProductPrice((+price + price * numberOfProducts).toFixed(2));
+    localStorage.setItem(title, JSON.stringify(product));
   };
 
   const minusProduct = () => {
     setNumberOfProducts(numberOfProducts - 1);
     setProductPrice((productPrice - price).toFixed(2));
+    localStorage.setItem(title, JSON.stringify(product));
   };
 
+  
   const addToBasket = () => {
     setIfAddToBasket(true);
+    localStorage.setItem(title, JSON.stringify(product));
   };
+
+  const deleteFromBasket = () => {
+    setIfAddToBasket(false);
+    localStorage.removeItem(title, JSON.stringify(product));
+  };
+
   return (
     <li key={id} className={styles.product__item}>
       <img
-        src={`${process.env.PUBLIC_URL}/assests/veg/${img}`}
+        src={require(`assets/${img}`)}
         alt={title}
         className={styles.product__item_img}
       />
@@ -33,13 +50,10 @@ export const ProductCard = ({ id, title, origin, price, img }) => {
       <p className={styles.product__item_origin}>Країна походження: {origin}</p>
       <p className={styles.product__item_price}>{productPrice} грн</p>
 
-      {numberOfProducts === 0 ? (
-        <div className={styles.product__item_bottom}>
-          <span className={styles.product__item_counter}>за 1 кг</span>
-          <AddToBasket onClick={addToBasket} />
-        </div>
-      ) : ifAddToBasket ? (
+      {ifAddToBasket ? (
         <NumberOfProducts
+          deleteFromBasket={deleteFromBasket}
+          addToBasket={addToBasket}
           addProduct={addProduct}
           minusProduct={minusProduct}
           numberOfProducts={numberOfProducts}
@@ -47,7 +61,9 @@ export const ProductCard = ({ id, title, origin, price, img }) => {
       ) : (
         <div className={styles.product__item_bottom}>
           <span className={styles.product__item_counter}>за 1 кг</span>
-          <AddToBasket onClick={addToBasket} />
+          <Button classes={styles.button} onClick={addToBasket}>
+            <img src={basketButton} alt="Додати товар до кошику" />
+          </Button>
         </div>
       )}
     </li>
