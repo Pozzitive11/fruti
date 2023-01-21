@@ -1,3 +1,5 @@
+@import "shared/styles/mixins";
+
 .popup {
   position: fixed;
   top: 0;
@@ -16,7 +18,5 @@
 }
 
 .popup.active {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-all-center;
 }

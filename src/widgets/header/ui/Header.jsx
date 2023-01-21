@@ -1,51 +1,25 @@
-import { burger } from 'assets';
-import { Button } from 'shared/ui/button/Button';
+import { burger } from "assets";
+import { Button } from "shared/ui/button/Button";
 
-import 'app/index.css';
-import styles from './Header.module.scss';
+import "app/index.css";
+import styles from "./Header.module.scss";
+import { Link } from "react-router-dom";
+import { Navigation } from "features/navigation";
 
 export const Header = () => {
   return (
     <header className={styles.header}>
       <div className="container">
         <div className={styles.header__inner}>
-          <a href="#home" className={styles.header__logo}>
+          <Link to="/" className={styles.header__logo}>
             Fruti
-          </a>
+          </Link>
           <Button classes={styles.button}>
-            <img src={burger} alt='Відкрити навігацію'/>
+            <img src={burger} alt="Відкрити навігацію" />
           </Button>
-          <nav className={styles.header__nav}>
-            <ul className={styles.header__list}>
-              <li className={styles.header__item}>
-                <a href="#vegetables" className={styles.header__link}>
-                  Овочі
-                </a>
-              </li>
-              <li className={styles.header__item}>
-                <a href="#fruits" className={styles.header__link}>
-                  Фрукти
-                </a>
-              </li>
-              <li className={styles.header__item}>
-                <a href="#green" className={styles.header__link}>
-                  Зелень
-                </a>
-              </li>
-              <li className={styles.header__item}>
-                <a href="#about" className={styles.header__link}>
-                  Про нас
-                </a>
-              </li>
-              <li className={styles.header__item}>
-                <a href="#pay" className={styles.header__link}>
-                  Доставка та оплата
-                </a>
-              </li>
-            </ul>
-          </nav>
+          <Navigation />
           <address className={styles.header__info}>
-            <a className={styles.header__phone} href={'tel:0678337139'}>
+            <a className={styles.header__phone} href={"tel:0678337139"}>
               0678337139
             </a>
             <p className={styles.header__shedule}>Працюємо Пн-Сб,</p>

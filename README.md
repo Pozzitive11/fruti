@@ -1,19 +1,12 @@
-винести навбар в окремий компонент
+https://docs.google.com/spreadsheets/d/1Ajwh2tvW3FEKcdg-kCiSlasj3kWpKVooCKYFq2kR6o4/edit#gid=1532814226
 
-розібратись з ЦСС змінними
+при некоректному значенню в інпут нічого не виодити
 
-Модільне вікно купування товару 
+так як const [productsInBasket] = usePersistedState([], "products"); визивається 1 раз, то localStorage некоректо оновлюється (тобто тільки після перезавантадення сторінки)
 
-getData => shared/api
+занести у функцію не можу, бо це хук
 
-розбити section на компоненти
+при визові productsToBuy отримую декілька undefined тому не працює Basket
 
-<!-- //////////////////////////////////////// -->
-
-розібратись з widgets
-
-search-product перенести в features
-
-зробити search-card
-
-винести ф-ії з ProductCard в окремий файл і передавати їх виконання в ProductCard та в SearchCard
+===================================================
+зробити щоб не перемалюовувалась сторінка

@@ -1,9 +1,9 @@
+@import "shared/styles/mixins";
 
 .info {
-  display: flex;
-  justify-content: space-between;
+  @include flex-h-between;
   flex-wrap: wrap;
-  
+
   padding-bottom: 88px;
   margin-top: 64px;
 
@@ -15,7 +15,7 @@
 
   &__left {
     max-width: 480px;
-    margin-right: 127px;
+    margin-right: 77px;
 
     &_list {
       list-style-type: disc;
@@ -46,5 +46,3 @@
     }
   }
 }
-
-

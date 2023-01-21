@@ -1,0 +1,47 @@
+@import "shared/styles/mixins";
+
+.search {
+  &__result {
+    &_name {
+      font-weight: var(--font-weigth-bold);
+      font-size: 22px;
+      line-height: 25px;
+      width: 160px;
+      text-align-last: left;
+    }
+    &_item {
+      @include flex-all-sb;
+
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+
+      .button {
+        background-color: var(--color-orange-light);
+        border-radius: 6px;
+        padding: 6px 12px;
+
+        img {
+          width: 49px;
+          height: 27px;
+        }
+      }
+    }
+
+    &_price {
+      font-weight: var(--font-weigth-bold);
+      font-size: 24px;
+      line-height: 27px;
+    }
+
+    &_img {
+      width: 99px;
+      height: 99px;
+    }
+  }
+}
+
+.container {
+  width: 168px;
+  height: 42px;
+}

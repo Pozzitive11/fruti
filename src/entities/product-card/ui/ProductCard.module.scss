@@ -1,3 +1,5 @@
+@import "shared/styles/mixins";
+
 .product__item {
   display: flex;
   flex-direction: column;
@@ -16,10 +18,10 @@
   }
 
   .button {
-  background-color: var(--color-orange-light);
-  border-radius: 6px;
-  padding: 10px 22px;
-}
+    background-color: var(--color-orange-light);
+    border-radius: 6px;
+    padding: 10px 22px;
+  }
 
   &_origin {
     margin-bottom: 16px;
@@ -33,10 +35,6 @@
   }
 
   &_bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex-all-sb;
   }
 }
-
-

@@ -1,0 +1,86 @@
+@import "shared/styles/mixins";
+
+.basket {
+  &__fullprice {
+    text-align: right;
+    margin-bottom: 15px;
+    font-weight: var(--font-weight-semibold);
+    font-size: 22px;
+    line-height: 27px;
+  }
+  &__name {
+    font-family: var(--font-family-montserrat);
+    font-weight: var(--font-weight-semibold);
+    font-size: 32px;
+    line-height: 39px;
+    color: var(--color-black);
+    margin-bottom: 32px;
+  }
+  &__list {
+    height: 332px;
+    overflow-y: auto;
+    padding-right: 20px;
+    margin-bottom: 40px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: var(--border-radius-normal);
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-orange-light);
+    border-radius: var(--border-radius-normal);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-orange);
+  }
+}
+
+.products__number {
+  @include flex-all-center;
+  width: 30px;
+  height: 30px;
+  color: var(--color-white);
+  font-size: 18px;
+  line-height: 22px;
+  background-color: #2d6251;
+  border-radius: 100%;
+}
+.button {
+  @include flex-all-end;
+
+  position: fixed;
+  right: 50px;
+  top: 120px;
+  width: 80px;
+  height: 80px;
+  background-color: var(--color-white);
+  border-radius: 100%;
+  background-image: url(../../../assets/open-basket.svg);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.order_button {
+  width: 100%;
+  padding: 14px 0;
+  font-size: 20px;
+  line-height: 24px;
+  font-family: var(--font-family-montserrat);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-white);
+  background-color: var(--color-orange-light);
+  border-radius: var(--border-radius-normal);
+}
+
+.modal {
+  max-width: 766px;
+  width: 100%;
+}

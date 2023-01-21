@@ -1,0 +1,45 @@
+@import "shared/styles/mixins";
+
+.delivery {
+  @include flex-all-sb;
+
+  flex-wrap: wrap;
+  margin-top: 200px;
+  margin-bottom: 31px;
+}
+
+.cooperation {
+  @include flex-all-sb;
+
+  flex-wrap: wrap;
+  margin-bottom: 102px;
+
+  &__content {
+    order: 1;
+  }
+
+  &__text {
+    a {
+      margin-left: 5px;
+      text-decoration: none;
+      color: #2d6251;
+    }
+  }
+}
+
+.text {
+  font-weight: var(--font-weight-light);
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.title {
+  margin-bottom: 16px;
+  font-weight: var(--font-weight-bold);
+  font-size: 40px;
+  line-height: 50px;
+}
+
+.content {
+  max-width: 543px;
+}

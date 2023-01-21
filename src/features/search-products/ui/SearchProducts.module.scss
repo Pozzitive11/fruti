@@ -1,3 +1,5 @@
+@import "shared/styles/mixins";
+
 .input {
   width: 770px;
   margin: 0 auto;
@@ -23,35 +25,48 @@
 
 .search {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-all-center;
 
   &__result {
     position: absolute;
     top: 173px;
     padding: 16px;
     width: 770px;
-    z-index: 20;
+    max-height: 350px;
+    z-index: 10;
     overflow-y: auto;
     overflow-x: hidden;
     background-color: var(--color-body);
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
     border-radius: var(--border-radius-normal);
 
-    &_item{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    &_item {
+      @include flex-all-sb;
 
-      &:not(:last-child){
+      &:not(:last-child) {
         margin-bottom: 16px;
       }
     }
 
-    &_img{
+    &_img {
       width: 99px;
       height: 99px;
     }
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-orange-light);
+    border-radius: var(--border-radius-normal);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-orange);
   }
 }

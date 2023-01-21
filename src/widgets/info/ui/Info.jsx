@@ -1,8 +1,8 @@
-import { info1, info2, info3 } from 'assets';
+import { info1, info2, info3 } from "assets";
 
-import styles from './Info.module.scss';
+import styles from "./Info.module.scss";
 
-const Info = () => {
+export const Info = () => {
   return (
     <section className={styles.info}>
       <div className={styles.info__left}>
@@ -61,5 +61,3 @@ const Info = () => {
     </section>
   );
 };
-
-export default Info;
