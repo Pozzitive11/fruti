@@ -1,24 +1,31 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { Button } from "shared/ui/button/Button";
 import { Modal } from "shared/ui/modal/Modal";
 
 import { minusButton, plusButton, deleteButton, basketButton } from "assets";
-import { addProduct, minusProduct } from "features/number-of-products";
+import {
+  addProduct,
+  minusProduct,
+  getProductQuantityById,
+} from "features/number-of-products";
 
 import styles from "./NumberOfProducts.module.scss";
 import "shared/styles/number-of-products.scss";
 
-import { usePersistedState } from "shared/usePersistedState";
 import { deepClone } from "shared/utils";
+import { useCart } from "shared/hooks";
 
-export function NumberOfProducts({
-  id,
-  price,
-  numberOfProducts,
-  setNumberOfProducts,
-}) {
+export function NumberOfProducts({ id, price }) {
   const [modal, setModal] = useState(false);
+  const [cartProducts, setCartProducts] = useCart();
+  const [productQuantity, setProductQuantity] = useState(
+    getProductQuantityById(cartProducts, id)
+  );
+
+  useEffect(() => {
+    setProductQuantity(getProductQuantityById(cartProducts, id));
+  }, [cartProducts, id]);
 
   const openModal = () => {
     setModal(true);
@@ -28,16 +35,8 @@ export function NumberOfProducts({
     setModal(false);
   };
 
-  const [productsInBasket, setProductsInBasket] = usePersistedState(
-    [],
-    "products"
-  );
   const handleProduct = ({ target }) => {
-    //  const productsInBasket = JSON.parse(localStorage.getItem("products")) || [];
-    let productsToSave = deepClone(productsInBasket);
-
-    console.log(productsToSave);
-    const currentProductIndex = productsInBasket.findIndex(
+    const currentProductIndex = cartProducts.findIndex(
       (product) => product.id === id
     );
     const button = target.closest("button");
@@ -45,19 +44,17 @@ export function NumberOfProducts({
       case "add":
         addProduct({
           currentProductIndex,
-          currentProducts: productsInBasket,
+          currentProducts: cartProducts,
           id,
-          setProductsInBasket,
+          setProducts: setCartProducts,
         });
-        setNumberOfProducts(numberOfProducts + 1);
         break;
       case "minus":
-        setNumberOfProducts(numberOfProducts - 1);
         minusProduct({
           currentProductIndex,
-          currentProducts: productsInBasket,
+          currentProducts: cartProducts,
           id,
-          setProductsInBasket,
+          setProducts: setCartProducts,
         });
         closeModal();
         break;
@@ -69,15 +66,15 @@ export function NumberOfProducts({
   return (
     <div className="number-of-products">
       <p className="number-of-products__price">
-        {(price * (numberOfProducts || 1)).toFixed(2)} грн
+        {(price * (productQuantity || 1)).toFixed(2)} грн
       </p>
-      {numberOfProducts ? (
+      {productQuantity ? (
         <div className="number-of-products__wrapper">
           <div className="number-of-products__price-static">{price} грн</div>
           <div className="number-of-products__count">за 1 кг</div>
           <div className={styles.buttons}>
-            {numberOfProducts === 1 ? (
-              <Button onClick={openModal} data-button="minus">
+            {productQuantity === 1 ? (
+              <Button onClick={openModal}>
                 <img src={deleteButton} alt={"Видалити"} />
               </Button>
             ) : (
@@ -87,7 +84,7 @@ export function NumberOfProducts({
             )}
 
             <span className={styles.number}>
-              {numberOfProducts}
+              {productQuantity}
               кг
             </span>
 

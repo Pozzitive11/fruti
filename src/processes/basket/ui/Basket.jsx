@@ -7,24 +7,19 @@ import { Modal } from "shared/ui/modal/Modal";
 
 import styles from "./Basket.module.scss";
 
-import { usePersistedState } from "shared/usePersistedState";
 import { Link } from "react-router-dom";
+import { useCart } from "shared/hooks";
 
 export const Basket = ({ products }) => {
   const [modal, setModal] = useState(false);
-
-  const [productsInBasket] = usePersistedState([], "products");
-
-  //   const productsToBuy = productsInBasket?.map((productInBasket) =>
-  //     products?.find((product) => product.id === productInBasket.id)
-  //   );
+  const [cartProducts] = useCart();
 
   const fullprice = 0;
 
   return (
     <>
       <Button onClick={() => setModal(true)} classes={styles.button}>
-        <div className={styles.products__number}>{productsInBasket.length}</div>
+        <div className={styles.products__number}>{cartProducts.length}</div>
       </Button>
       <Modal visible={modal} setVisible={setModal} classes={styles.modal}>
         <div className="basket">

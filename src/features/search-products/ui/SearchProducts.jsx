@@ -55,10 +55,10 @@ export const SearchProducts = ({ products }) => {
 //     addToBasket={addToBasket}
 //     addProduct={addProduct}
 //     minusProduct={minusProduct}
-//     numberOfProducts={numberOfProducts}
+//     quantity={quantity}
 //   />
 //   <p className={styles.search__result_price}>
-//     {(price * (numberOfProducts || 1)).toFixed(2)} грн
+//     {(price * (quantity || 1)).toFixed(2)} грн
 //   </p>
 //   <Button classes={styles.button} onClick={addToBasket}>
 //     <img src={basketButton} alt="Додати товар до кошику" />

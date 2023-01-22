@@ -1,16 +1,7 @@
 import { NumberOfProducts } from "features/number-of-products";
 import styles from "./BasketCard.module.scss";
-import { useState } from "react";
-
-import { usePersistedState } from "shared/usePersistedState";
 
 export const BasketCard = ({ id, img, price, origin, title, type }) => {
-  const [productsInBasket] = usePersistedState([], "products");
-
-  const [numberOfProducts, setNumberOfProducts] = useState(
-    productsInBasket?.find((item) => item.id === id)?.numberOfProducts ?? 0
-  );
-
   return (
     <li className={styles.basket__item}>
       <img
@@ -24,12 +15,7 @@ export const BasketCard = ({ id, img, price, origin, title, type }) => {
           Країна походження: {origin}
         </p>
       </div>
-      <NumberOfProducts
-        numberOfProducts={numberOfProducts}
-        setNumberOfProducts={setNumberOfProducts}
-        id={id}
-        price={price}
-      />
+      <NumberOfProducts id={id} price={price} />
     </li>
   );
 };

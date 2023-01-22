@@ -4,21 +4,21 @@ export const addProduct = ({
   currentProductIndex,
   currentProducts,
   id,
-  setProductsInBasket,
+  setProducts,
 }) => {
   let productsToSave = deepClone(currentProducts);
-//   console.log({ currentProducts, id, currentProductIndex, productsToSave });
+
   if (currentProductIndex === -1) {
     const productToAdd = {
       id,
-      numberOfProducts: 1,
+      quantity: 1,
     };
 
     productsToSave.push(productToAdd);
   } else {
-    productsToSave[currentProductIndex].numberOfProducts++;
+    ++productsToSave[currentProductIndex].quantity;
   }
-  setProductsInBasket(productsToSave);
+  setProducts(productsToSave);
   //   localStorage.setItem("products", JSON.stringify(products));
 };
 
@@ -26,19 +26,23 @@ export const minusProduct = ({
   currentProductIndex,
   currentProducts,
   id,
-  setProductsInBasket,
+  setProducts,
 }) => {
   if (currentProductIndex === -1) {
     return;
   }
   let productsToSave = deepClone(currentProducts);
 
-  if (productsToSave[currentProductIndex].numberOfProducts === 1) {
+  if (productsToSave[currentProductIndex].quantity === 1) {
     productsToSave = productsToSave.filter((product) => product.id !== id);
   } else {
-    productsToSave[currentProductIndex].numberOfProducts--;
+    --productsToSave[currentProductIndex].quantity;
   }
-  setProductsInBasket(productsToSave);
+  setProducts(productsToSave);
 
   //   localStorage.setItem("products", JSON.stringify(products));
+};
+
+export const getProductQuantityById = (products, productId) => {
+  return products.find((product) => product.id === productId)?.quantity ?? 0;
 };
