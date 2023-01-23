@@ -1,0 +1,64 @@
+@import "shared/styles/mixins";
+
+.header {
+  height: 93px;
+
+  &__inner {
+    @include flex-all-sb;
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 2px solid var(--color-orange);
+    border-radius: 1px;
+  }
+
+  &__logo {
+    font-family: var(--font-family-nerko);
+    font-weight: var(--font-weigth-regular);
+    font-size: 64px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-orange);
+
+    @include tablet {
+      font-size: 50px;
+    }
+  }
+
+  &__phone {
+    font-weight: var(--font-weigth-bold);
+    text-decoration: none;
+    color: var(--color-black);
+    font-size: 24px;
+    line-height: 20px;
+
+    @include tablet {
+      font-size: 15px;
+    }
+  }
+
+  &__shedule {
+    font-weight: var(--font-weigth-bold);
+    font-size: 18px;
+    line-height: 20px;
+    font-style: var(--font-family-comfortaa);
+
+    @include tablet {
+      font-size: 15px;
+    }
+  }
+
+  address {
+    font-style: normal;
+
+    @include minitablet {
+      display: none;
+    }
+  }
+  .button {
+    display: none;
+
+    @include minitablet {
+      display: block;
+    }
+  }
+}

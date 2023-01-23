@@ -43,7 +43,6 @@ export const Main = () => {
       ))}
       <div className="page__img"></div>
       <Info />
-      console.log(productsStatus);
       {cartProducts.length > 0 && (
         <Basket products={products} productsStatus={productsStatus} />
       )}
