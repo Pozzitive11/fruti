@@ -69,10 +69,13 @@
 }
 
 .order_button {
+  display: inline-block;
   width: 100%;
   padding: 14px 0;
   font-size: 20px;
   line-height: 24px;
+  text-align: center;
+  text-decoration: none;
   font-family: var(--font-family-montserrat);
   font-weight: var(--font-weight-semibold);
   color: var(--color-white);

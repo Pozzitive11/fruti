@@ -19,7 +19,16 @@ export const Basket = ({ products, productsStatus }) => {
     products?.find((product) => cartProducts.id === product.id)
   );
 
-  const fullprice = 0;
+  const productsPrice = produtsToBuy.map((produtToBuy) => produtToBuy?.price);
+
+  const productsQuantity = cartProducts.map(
+    (cartProduct) => cartProduct?.quantity
+  );
+
+  let fullprice = 0;
+  for (let i = 0; i < productsPrice.length; i++) {
+    fullprice += productsPrice[i] * productsQuantity[i];
+  }
 
   return (
     <>
@@ -50,7 +59,7 @@ export const Basket = ({ products, productsStatus }) => {
         <div className={styles.basket__fullprice}>
           Сума: {fullprice.toFixed(2)} грн
         </div>
-        <Link to="/order" classes={styles.order_button}>
+        <Link to="/order" className={styles.order_button}>
           Оформити замовлення
         </Link>
       </Modal>
