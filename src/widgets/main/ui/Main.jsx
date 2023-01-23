@@ -1,10 +1,12 @@
+import { useSelector } from "react-redux";
+import { useCart } from "shared/hooks";
+
 import Products from "widgets/products/ui/Products";
 import { SearchProducts } from "features/search-products";
 import { About } from "widgets/about";
 import { Info } from "widgets/info";
 import { Basket } from "processes/basket";
 
-import { useSelector } from "react-redux";
 const productTypes = [
   {
     id: "vegetables",
@@ -21,7 +23,9 @@ const productTypes = [
 ];
 
 export const Main = () => {
+  const [cartProducts] = useCart();
   const products = useSelector((state) => state.products.products);
+  const productsStatus = useSelector((state) => state.products.isloading);
 
   return (
     <main className="container">
@@ -30,6 +34,7 @@ export const Main = () => {
       <div className="page__img"></div>
       {productTypes.map(({ id, title }) => (
         <Products
+          productsStatus={productsStatus}
           key={id}
           title={title}
           id={id}
@@ -38,7 +43,10 @@ export const Main = () => {
       ))}
       <div className="page__img"></div>
       <Info />
-      <Basket products={products} />
+      console.log(productsStatus);
+      {cartProducts.length > 0 && (
+        <Basket products={products} productsStatus={productsStatus} />
+      )}
     </main>
   );
 };

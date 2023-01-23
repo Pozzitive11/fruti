@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Button } from "shared/ui/button/Button";
 import { Modal } from "shared/ui/modal/Modal";
@@ -13,7 +13,6 @@ import {
 import styles from "./NumberOfProducts.module.scss";
 import "shared/styles/number-of-products.scss";
 
-import { deepClone } from "shared/utils";
 import { useCart } from "shared/hooks";
 
 export function NumberOfProducts({ id, price }) {

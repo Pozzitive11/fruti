@@ -1,18 +1,23 @@
 import { useState } from "react";
+import { useCart } from "shared/hooks";
+
+import { Link } from "react-router-dom";
 
 import { BasketCard } from "entities/basket-card";
 
 import { Button } from "shared/ui/button/Button";
+import { Loader } from "shared/ui/loader/Loader";
 import { Modal } from "shared/ui/modal/Modal";
 
 import styles from "./Basket.module.scss";
 
-import { Link } from "react-router-dom";
-import { useCart } from "shared/hooks";
-
-export const Basket = ({ products }) => {
+export const Basket = ({ products, productsStatus }) => {
   const [modal, setModal] = useState(false);
   const [cartProducts] = useCart();
+
+  const produtsToBuy = cartProducts?.map((cartProducts) =>
+    products?.find((product) => cartProducts.id === product.id)
+  );
 
   const fullprice = 0;
 
@@ -24,19 +29,23 @@ export const Basket = ({ products }) => {
       <Modal visible={modal} setVisible={setModal} classes={styles.modal}>
         <div className="basket">
           <div className={styles.basket__name}>Корзина</div>
-          <ul className={styles.basket__list}>
-            {products.map(({ id, img, price, origin, title, type }) => (
-              <BasketCard
-                key={id}
-                id={id}
-                type={type}
-                img={img}
-                price={price}
-                origin={origin}
-                title={title}
-              />
-            ))}
-          </ul>
+          {productsStatus ? (
+            <Loader />
+          ) : (
+            <ul className={styles.basket__list}>
+              {produtsToBuy?.map(({ id, img, price, origin, title, type }) => (
+                <BasketCard
+                  key={id}
+                  id={id}
+                  type={type}
+                  img={img}
+                  price={price}
+                  origin={origin}
+                  title={title}
+                />
+              ))}
+            </ul>
+          )}
         </div>
         <div className={styles.basket__fullprice}>
           Сума: {fullprice.toFixed(2)} грн
