@@ -1,5 +1,6 @@
-import styles from './Footer.module.scss';
-import { pay } from 'assets';
+import styles from "./Footer.module.scss";
+import { pay } from "assets";
+import { Logo } from "shared/logo/Logo";
 
 export function Footer() {
   return (
@@ -7,7 +8,7 @@ export function Footer() {
       <div className="container">
         <div className={styles.footer__inner}>
           <div className={styles.footer__left}>
-            <a href='#home' className={styles.footer__logo}>Fruti</a>
+            <Logo />
             <p className={styles.footer__text}>
               Доставка свіженького з турботою про Вас
             </p>

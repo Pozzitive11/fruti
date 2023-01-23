@@ -1,0 +1,14 @@
+@import "shared/styles/mixins";
+
+.logo {
+  font-family: var(--font-family-nerko);
+  font-weight: var(--font-weigth-regular);
+  font-size: 64px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-orange);
+
+  @include tablet {
+    font-size: 50px;
+  }
+}
