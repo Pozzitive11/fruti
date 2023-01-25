@@ -8,14 +8,14 @@ import {
   addProduct,
   minusProduct,
   getProductQuantityById,
-} from "features/number-of-products";
+} from "features/calculate-products-quantity";
 
-import styles from "./NumberOfProducts.module.scss";
-import "shared/styles/number-of-products.scss";
+import styles from "./CalculateProductsQuantity.module.scss";
+import "shared/styles/calculate-products-quantity.scss";
 
 import { useCart } from "shared/hooks";
 
-export function NumberOfProducts({ id, price }) {
+export function CalculateProductsQuantity({ id, price }) {
   const [modal, setModal] = useState(false);
   const [cartProducts, setCartProducts] = useCart();
   const [productQuantity, setProductQuantity] = useState(

@@ -1,4 +1,4 @@
-import { NumberOfProducts } from "features/number-of-products";
+import { CalculateProductsQuantity } from "features/calculate-products-quantity";
 import styles from "./ProductCard.module.scss";
 
 export const ProductCard = ({ id, title, origin, price, img, type }) => {
@@ -12,7 +12,7 @@ export const ProductCard = ({ id, title, origin, price, img, type }) => {
       <h3 className={styles.product__item_name}>{title}</h3>
       <p className={styles.product__item_origin}>Країна походження: {origin}</p>
 
-      <NumberOfProducts price={price} id={id} />
+      <CalculateProductsQuantity price={price} id={id} />
     </li>
   );
 };

@@ -15,9 +15,9 @@ export const HomePage = () => {
 
 
   return (
-    <>
+    <div className="wrapper">
       <Main />
       <BtnScrollUp />
-    </>
+    </div>
   );
 };

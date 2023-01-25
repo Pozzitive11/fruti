@@ -1,4 +1,4 @@
-import { NumberOfProducts } from "features/number-of-products";
+import { CalculateProductsQuantity } from "features/calculate-products-quantity";
 import styles from "./SearchCard.module.scss";
 
 export const SearchCard = ({ title, price, img, id, type }) => {
@@ -10,7 +10,7 @@ export const SearchCard = ({ title, price, img, id, type }) => {
         alt={title}
       />
       <h2 className={styles.search__result_name}>{title}</h2>
-      <NumberOfProducts price={price} id={id} />
+      <CalculateProductsQuantity price={price} id={id} />
     </li>
   );
 };

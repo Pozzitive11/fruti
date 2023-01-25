@@ -2,26 +2,13 @@
 
 .header {
   height: 93px;
+  margin-bottom: 32px;
 
   &__inner {
     @include flex-all-sb;
-    margin-bottom: 32px;
     padding-bottom: 32px;
     border-bottom: 2px solid var(--color-orange);
     border-radius: 1px;
-  }
-
-  &__logo {
-    font-family: var(--font-family-nerko);
-    font-weight: var(--font-weigth-regular);
-    font-size: 64px;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--color-orange);
-
-    @include tablet {
-      font-size: 50px;
-    }
   }
 
   &__phone {

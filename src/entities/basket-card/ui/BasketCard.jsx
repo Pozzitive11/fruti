@@ -1,4 +1,4 @@
-import { NumberOfProducts } from "features/number-of-products";
+import { CalculateProductsQuantity } from "features/calculate-products-quantity";
 import styles from "./BasketCard.module.scss";
 
 export const BasketCard = ({ id, img, price, origin, title, type }) => {
@@ -15,7 +15,7 @@ export const BasketCard = ({ id, img, price, origin, title, type }) => {
           Країна походження: {origin}
         </p>
       </div>
-      <NumberOfProducts id={id} price={price} />
+      <CalculateProductsQuantity id={id} price={price} />
     </li>
   );
 };
