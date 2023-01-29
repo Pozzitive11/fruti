@@ -5,6 +5,7 @@ import "app/index.css";
 import styles from "./Header.module.scss";
 import { Navigation } from "features/navigation";
 import { Logo } from "shared/logo/Logo";
+import { SiteInfo } from "entities/site-info";
 
 export const Header = () => {
   return (
@@ -16,13 +17,7 @@ export const Header = () => {
             <img src={burger} alt="Відкрити навігацію" />
           </Button>
           <Navigation />
-          <address className={styles.header__info}>
-            <a className={styles.header__phone} href={"tel:0678337139"}>
-              0678337139
-            </a>
-            <p className={styles.header__shedule}>Працюємо Пн-Сб,</p>
-            <p className={styles.header__shedule}>Нд-вихідний</p>
-          </address>
+          <SiteInfo />
         </div>
       </div>
     </header>

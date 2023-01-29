@@ -6,12 +6,20 @@ import { HeaderOrder } from "widgets/headerOrder/ui/HeaderOrder";
 export const Layout = () => {
   const location = useLocation();
 
-  console.log("pathname", location.pathname);
   return (
     <>
-      {location.pathname === "/order" ? <HeaderOrder /> : <Header />}
-      <Outlet />
-      <Footer />
+      {location.pathname === "/order" ? (
+        <>
+          <HeaderOrder />
+          <Outlet />
+        </>
+      ) : (
+        <>
+          <Header />
+          <Outlet />
+          <Footer />
+        </>
+      )}
     </>
   );
 };

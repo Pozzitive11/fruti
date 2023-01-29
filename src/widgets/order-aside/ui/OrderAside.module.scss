@@ -1,0 +1,73 @@
+@import "shared/styles/mixins";
+
+.order__aside {
+  position: fixed;
+  right: 10%;
+  max-width: 334px;
+  width: 100%;
+  padding: 16px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-orange);
+  border-radius: var(--border-radius-normal);
+  font-size: 18px;
+  line-height: 22px;
+  @include minidesk {
+    position: relative;
+    right: 0;
+  }
+
+  &_title {
+    margin-bottom: 40px;
+    padding-bottom: 14px;
+    font-family: var(--font-family-montserrat);
+    font-style: normal;
+    font-weight: var(--font-weight-semibold);
+    font-size: 28px;
+    line-height: 34px;
+    color: var(--color-black);
+    border-bottom: 1px solid var(--color-orange);
+  }
+
+  &_worth {
+    @include flex-all-sb;
+    margin-bottom: 16px;
+  }
+
+  &_delivery {
+    @include flex-all-sb;
+    margin-bottom: 24px;
+  }
+  &_paid {
+    @include flex-all-sb;
+    margin-bottom: 24px;
+    padding: 30px 0 24px;
+    border-top: 1px solid var(--color-orange);
+    border-bottom: 1px solid var(--color-orange);
+
+    .order__aside_price {
+      font-size: 24px;
+      line-height: 29px;
+    }
+  }
+  &_price {
+    font-family: var(--font-family-montserrat);
+    font-style: normal;
+    font-weight: var(--font-weight-semibold);
+    font-size: 18px;
+    line-height: 22px;
+  }
+  &_button {
+    display: inline-block;
+    width: 100%;
+    padding: 14px 0;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-family: var(--font-family-montserrat);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-white);
+    background-color: var(--color-orange-light);
+    border-radius: var(--border-radius-normal);
+  }
+}

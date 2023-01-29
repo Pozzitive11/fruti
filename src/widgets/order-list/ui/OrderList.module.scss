@@ -1,0 +1,19 @@
+.order {
+  &__wrapper {
+    margin-bottom: 32px;
+  }
+  &__list {
+    height: 332px;
+    overflow-y: auto;
+    padding-right: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__fullprice {
+    text-align: right;
+    margin-bottom: 15px;
+    font-weight: var(--font-weigth-semibold);
+    font-size: 22px;
+    line-height: 27px;
+  }
+}

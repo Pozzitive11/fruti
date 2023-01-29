@@ -1,0 +1,23 @@
+@import "shared/styles/mixins";
+
+.contacts {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 26px;
+  }
+  &__input {
+    width: 353px;
+    padding: 15px;
+
+    @include mobile {
+      width: 280px;
+    }
+  }
+  &__label {
+    font-weight: 300;
+    font-size: 14px;
+    color: #4f4f4f;
+    line-height: 40px;
+  }
+}

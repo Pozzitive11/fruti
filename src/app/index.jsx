@@ -6,7 +6,7 @@ import { ErrorPage } from "pages/error-page";
 import { DeliveryPage } from "pages/delivery-page";
 
 import { Layout } from "shared/ui/layout/ui/Layout";
-import OrderPage from "pages/order-page/OrderPage";
+import OrderPage from "pages/order-page/ui/OrderPage";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="delivery" element={<DeliveryPage />} />
-          <Route path="order" element={<OrderPage />} />
+          <Route path="/order" element={<OrderPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>

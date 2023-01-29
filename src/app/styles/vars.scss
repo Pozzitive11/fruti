@@ -5,6 +5,7 @@
   --color-orange: #c8633a;
   --color-orange-light: #e45c25;
   --color-body: #f5f2e3;
+  --color-gray: #4f4f4f;
 
   --font-family-comfortaa: "Comfortaa", cursive;
   --font-family-montserrat: "Montserrat", sans-serif;
@@ -16,6 +17,8 @@
   --font-weigth-bold: 700;
 
   --border-radius-normal: 6px;
+
+  --container-width: 1200px;
 }
 
 *,
@@ -70,11 +73,10 @@ main {
 .wrapper {
   min-height: 100%;
   display: flex;
-  flex-direction: column;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: var(--container-width);
   padding: 0 15px;
   margin: 0 auto;
 }

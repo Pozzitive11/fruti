@@ -29,36 +29,6 @@
     }
   }
 
-  &__phone {
-    font-weight: var(--font-weigth-bold);
-    text-decoration: none;
-    color: var(--color-black);
-    font-size: 24px;
-    line-height: 20px;
-
-    @include tablet {
-      font-size: 15px;
-    }
-  }
-
-  &__shedule {
-    font-weight: var(--font-weigth-bold);
-    font-size: 18px;
-    line-height: 20px;
-    font-style: var(--font-family-comfortaa);
-
-    @include tablet {
-      font-size: 15px;
-    }
-  }
-
-  address {
-    font-style: normal;
-
-    @include minitablet {
-      display: none;
-    }
-  }
   .button {
     display: none;
 
