@@ -4,3 +4,9 @@ https://docs.google.com/spreadsheets/d/1Ajwh2tvW3FEKcdg-kCiSlasj3kWpKVooCKYFq2kR
 
 ===================================================
 розібратись з Layout
+
+DeliveryShedule
+
+fullprice 
+
+

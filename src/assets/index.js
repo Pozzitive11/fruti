@@ -31,6 +31,8 @@ import cooperation from "./about-page/cooperation.png";
 
 import payment from "./delivery-page/payment.png";
 
+import burgerClose from "./burger-close.svg";
+
 export {
   about1,
   about2,
@@ -56,4 +58,5 @@ export {
   delivery,
   cooperation,
   payment,
+  burgerClose,
 };

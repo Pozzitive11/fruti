@@ -13,7 +13,6 @@ export const HomePage = () => {
     dispatch(getProductsRedux());
   }, [dispatch]);
 
-
   return (
     <div className="wrapper">
       <Main />

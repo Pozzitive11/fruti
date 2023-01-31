@@ -27,7 +27,6 @@ export const minusProduct = ({
   currentProducts,
   id,
   setProducts,
-  closeModal,
 }) => {
   if (currentProductIndex === -1) {
     return;
@@ -40,7 +39,6 @@ export const minusProduct = ({
     --productsToSave[currentProductIndex].quantity;
   }
   setProducts(productsToSave);
-  closeModal();
   //   localStorage.setItem("products", JSON.stringify(products));
 };
 

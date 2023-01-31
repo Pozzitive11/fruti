@@ -9,8 +9,8 @@ import { useSelector } from "react-redux";
 export default function OrderList({ classes }) {
   const [cartProducts] = useCart();
 
-    const products = useSelector((state) => state.products.products);
-    const productsStatus = useSelector((state) => state.products.isloading);
+  const products = useSelector((state) => state.products.products);
+  const productsStatus = useSelector((state) => state.products.isloading);
 
   const produtsToBuy = cartProducts?.map((cartProducts) =>
     products?.find((product) => cartProducts.id === product.id)

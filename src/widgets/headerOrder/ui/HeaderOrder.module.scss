@@ -13,10 +13,9 @@
       @include flex-all-center;
     }
   }
-
-  address {
-    @include mobile {
-      display: none;
-    }
+}
+address {
+  @include mobile {
+    display: none;
   }
 }

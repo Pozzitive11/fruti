@@ -1,10 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { getProductsData } from "widgets/main/api/getProductsData";
+import { getData } from "shared/api/api";
 
 export const getProductsRedux = createAsyncThunk(
   "products/getProductsData",
   async function () {
-    const responce = await getProductsData();
+    const responce = await getData("/products");
     return responce;
   }
 );
@@ -18,7 +18,6 @@ const productsSlice = createSlice({
     isloading: true,
   },
   reducers: {
-    getProducts(state, action) {},
   },
   extraReducers: {
     [getProductsRedux.pending]: (state) => {
@@ -30,7 +29,10 @@ const productsSlice = createSlice({
       state.products = action.payload;
       state.isloading = false;
     },
-    [getProductsRedux.rejected]: (state, action) => {},
+    [getProductsRedux.rejected]: (state, action) => {
+      state.status = "rejected";
+      state.error = action.payload;
+    },
   },
 });
 

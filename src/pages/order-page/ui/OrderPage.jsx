@@ -8,8 +8,17 @@ import { DeliveryShedule } from "entities/delivery-shedule";
 import { Textarea } from "shared/ui/textarea/Textarea";
 import cn from "classnames";
 import { OrderAside } from "widgets/order-aside";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { getProductsRedux } from "app/store/productsSlice";
 
 export default function OrderPage() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProductsRedux());
+  }, [dispatch]);
+
   return (
     <div className="wrapper">
       <main className="container">
@@ -86,7 +95,7 @@ export default function OrderPage() {
                       type="radio"
                       name="payment"
                       classes={styles.form__payment_radio}
-                      checked
+                      defaultChecked={true}
                     />
                     Кредитною карткою
                   </label>

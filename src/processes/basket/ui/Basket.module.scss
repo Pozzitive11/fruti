@@ -53,6 +53,13 @@
   line-height: 22px;
   background-color: #2d6251;
   border-radius: 100%;
+
+  @include minitablet {
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    line-height: 17px;
+  }
 }
 .button {
   @include flex-all-end;
@@ -68,9 +75,25 @@
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
   background-position: center;
   background-repeat: no-repeat;
+
+  @include minitablet {
+    right: 20px;
+    width: 60px;
+    height: 60px;
+  }
 }
 
 .modal {
   max-width: 766px;
   width: 100%;
+
+  @include tablet {
+    max-width: 666px;
+  }
+  @include minitablet {
+    max-width: 540px;
+  }
+  @include mobile {
+    max-width: 300px;
+  }
 }
