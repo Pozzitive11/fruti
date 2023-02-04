@@ -7,6 +7,4 @@ https://docs.google.com/spreadsheets/d/1Ajwh2tvW3FEKcdg-kCiSlasj3kWpKVooCKYFq2kR
 
 DeliveryShedule
 
-fullprice 
-
-
+НАХУЙ КНОПКУ

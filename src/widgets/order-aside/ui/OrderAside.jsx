@@ -1,6 +1,9 @@
+import {
+  calculateFullprice,
+  mapProductsForSumUp,
+} from "features/calculate-products-quantity/lib/utils";
 import { useSelector } from "react-redux";
 import { useCart } from "shared/hooks";
-import { calculateFullprice } from "shared/lib/calculateFullprice";
 import { Button } from "shared/ui/button/Button";
 import styles from "./OrderAside.module.scss";
 
@@ -8,14 +11,19 @@ const deliveryPrice = 50;
 
 export const OrderAside = () => {
   const [cartProducts] = useCart();
-  const products = useSelector((state) => state.products.products);
 
+  const products = useSelector((state) => state.products.products);
+  const productsStatus = useSelector((state) => state.products.isloading);
   const produtsToBuy = cartProducts?.map((cartProducts) =>
     products?.find((product) => cartProducts.id === product.id)
   );
 
-  const fullprice = calculateFullprice(produtsToBuy, cartProducts);
-
+  let fullprice = 0;
+  if (!productsStatus) {
+    fullprice = calculateFullprice(
+      mapProductsForSumUp(produtsToBuy, cartProducts)
+    );
+  }
 
   const priceWithDelivery = +fullprice + +deliveryPrice;
 

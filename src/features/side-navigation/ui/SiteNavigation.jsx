@@ -5,7 +5,7 @@ import styles from "./SideNavigation.module.scss";
 export const SideNavigation = ({ visible }) => {
   const rootClasses = [styles.side_nav__wrapper];
 
-  if (!visible) {
+  if (visible) {
     rootClasses.push(styles.active);
   }
   return (

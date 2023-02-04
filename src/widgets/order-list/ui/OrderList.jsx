@@ -5,18 +5,28 @@ import { Loader } from "shared/ui/loader/Loader";
 import styles from "./OrderList.module.scss";
 import cn from "classnames";
 import { useSelector } from "react-redux";
-import { calculateFullprice } from "../../../shared/lib/calculateFullprice";
+import {
+  calculateFullprice,
+  mapProductsForSumUp,
+} from "features/calculate-products-quantity/lib/utils";
 
 export default function OrderList({ classes }) {
   const [cartProducts] = useCart();
 
   const products = useSelector((state) => state.products.products);
+
   const productsStatus = useSelector((state) => state.products.isloading);
+
   const produtsToBuy = cartProducts?.map((cartProducts) =>
     products?.find((product) => cartProducts.id === product.id)
   );
 
-  const fullprice = calculateFullprice(produtsToBuy, cartProducts);
+  let fullprice = 0;
+  if (!productsStatus) {
+    fullprice = calculateFullprice(
+      mapProductsForSumUp(produtsToBuy, cartProducts)
+    );
+  }
 
   return (
     <div className={styles.order__wrapper}>
@@ -37,9 +47,7 @@ export default function OrderList({ classes }) {
           ))}
         </ul>
       )}
-      <div className={styles.order__fullprice}>
-        Сума: {fullprice} грн
-      </div>
+      <div className={styles.order__fullprice}>Сума: {fullprice} грн</div>
     </div>
   );
 }

@@ -10,7 +10,7 @@ import { useState } from "react";
 import { SideNavigation } from "features/side-navigation";
 
 export const Header = () => {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   return (
     <header className={styles.header}>

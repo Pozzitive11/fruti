@@ -8,14 +8,14 @@ import "shared/styles/search-products.scss";
 
 export const SearchProducts = ({ products }) => {
   const [searchingProducts, setSearchingProducts] = useState("");
+  
+  const filteredProduct = products.filter((item) => {
+    return item.title.toLowerCase().includes(searchingProducts.toLowerCase());
+  });
 
   const handleSearchInput = ({ target }) => {
     setSearchingProducts(target.value);
   };
-
-  const filteredProduct = products.filter((item) => {
-    return item.title.toLowerCase().includes(searchingProducts.toLowerCase());
-  });
 
   return (
     <div className="search">
