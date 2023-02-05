@@ -23,7 +23,6 @@ export const Basket = () => {
           <div className={styles.basket__name}>Корзина</div>
           <OrderList />
         </div>
-
         <Link to="/order" className={styles.basket__button_order}>
           Оформити замовлення
         </Link>

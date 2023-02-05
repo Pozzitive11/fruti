@@ -4,7 +4,7 @@ import { Button } from "shared/ui/button/Button";
 import "app/index.css";
 import styles from "./Header.module.scss";
 import { Navigation } from "features/navigation";
-import { Logo } from "shared/logo/Logo";
+import { Logo } from "shared/ui/logo/Logo";
 import { SiteInfo } from "entities/site-info";
 import { useState } from "react";
 import { SideNavigation } from "features/side-navigation";

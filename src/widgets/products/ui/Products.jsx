@@ -3,7 +3,7 @@ import { Loader } from "shared/ui/loader/Loader";
 
 import styles from "./Products.module.scss";
 
-const Products = ({ id, title, products, productsStatus }) => {
+export const Products = ({ id, title, products, productsStatus }) => {
   return (
     <section id={id} className={styles.products}>
       <h2 className={styles.products__title}>{title}</h2>
@@ -27,5 +27,3 @@ const Products = ({ id, title, products, productsStatus }) => {
     </section>
   );
 };
-
-export default Products;

@@ -1,6 +1,6 @@
 import styles from "./DeliveryShedule.module.scss";
 import { Input } from "shared/ui/input/Input";
-import { months } from "../config/constants";
+import { months } from "../config";
 
 export const DeliveryShedule = () => {
   const sheduleDays = ["Завтра"];

@@ -5,7 +5,7 @@ import { AboutPage } from "pages/about-page";
 import { ErrorPage } from "pages/error-page";
 import { DeliveryPage } from "pages/delivery-page";
 
-import { Layout } from "shared/ui/layout/ui/Layout";
+import { Layout } from "shared/ui/layout/Layout";
 import OrderPage from "pages/order-page/ui/OrderPage";
 
 function App() {

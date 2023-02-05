@@ -33,6 +33,7 @@ import payment from "./delivery-page/payment.png";
 
 import burgerClose from "./burger-close.svg";
 import error from "./error.svg";
+import basketImg from "./basket-img.png";
 
 export {
   about1,
@@ -61,4 +62,5 @@ export {
   payment,
   burgerClose,
   error,
+  basketImg,
 };

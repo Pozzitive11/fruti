@@ -57,18 +57,5 @@
     font-size: 18px;
     line-height: 22px;
   }
-  &_button {
-    display: inline-block;
-    width: 100%;
-    padding: 14px 0;
-    font-size: 16px;
-    line-height: 20px;
-    text-align: center;
-    text-decoration: none;
-    font-family: var(--font-family-montserrat);
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-white);
-    background-color: var(--color-orange-light);
-    border-radius: var(--border-radius-normal);
-  }
+  
 }

@@ -1,8 +1,8 @@
 import styles from "./Footer.module.scss";
 import { pay } from "assets";
-import { Logo } from "shared/logo/Logo";
+import { Logo } from "shared/ui/logo/Logo";
 
-export function Footer() {
+export const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className="container">
@@ -58,4 +58,4 @@ export function Footer() {
       </div>
     </footer>
   );
-}
+};

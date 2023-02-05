@@ -1,7 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { Footer } from "widgets/footer";
 import { Header } from "widgets/header";
-import { HeaderOrder } from "widgets/header-order/ui/HeaderOrder";
+import { HeaderOrder } from "widgets/header-order";
 
 export const Layout = () => {
   const location = useLocation();

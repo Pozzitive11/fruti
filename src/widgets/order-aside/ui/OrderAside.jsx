@@ -1,13 +1,12 @@
+import { OrderModal } from "entities/order-modal";
 import {
   calculateFullprice,
   mapProductsForSumUp,
 } from "features/calculate-products-quantity/lib/utils";
 import { useSelector } from "react-redux";
 import { useCart } from "shared/hooks";
-import { Button } from "shared/ui/button/Button";
+import { deliveryPrice } from "../config";
 import styles from "./OrderAside.module.scss";
-
-const deliveryPrice = 50;
 
 export const OrderAside = () => {
   const [cartProducts] = useCart();
@@ -28,25 +27,25 @@ export const OrderAside = () => {
   const priceWithDelivery = +fullprice + +deliveryPrice;
 
   return (
-    <aside className={styles.order__aside}>
-      <h2 className={styles.order__aside_title}>Разом</h2>
-      <div className={styles.order__aside_worth}>
-        Товар на суму{" "}
-        <span className={styles.order__aside_price}>{fullprice} грн</span>
-      </div>
-      <div className={styles.order__aside_delivery}>
-        Вартість доставки{" "}
-        <span className={styles.order__aside_price}>{deliveryPrice} грн</span>
-      </div>
-      <div className={styles.order__aside_paid}>
-        До сплати{" "}
-        <span className={styles.order__aside_price}>
-          {priceWithDelivery.toFixed(2)} грн
-        </span>
-      </div>
-      <Button type="submit" classes={styles.order__aside_button}>
-        Замовлення підтверджую
-      </Button>
-    </aside>
+    <>
+      <aside className={styles.order__aside}>
+        <h2 className={styles.order__aside_title}>Разом</h2>
+        <div className={styles.order__aside_worth}>
+          Товар на суму{" "}
+          <span className={styles.order__aside_price}>{fullprice} грн</span>
+        </div>
+        <div className={styles.order__aside_delivery}>
+          Вартість доставки{" "}
+          <span className={styles.order__aside_price}>{deliveryPrice} грн</span>
+        </div>
+        <div className={styles.order__aside_paid}>
+          До сплати{" "}
+          <span className={styles.order__aside_price}>
+            {priceWithDelivery.toFixed(2)} грн
+          </span>
+        </div>
+        <OrderModal />
+      </aside>
+    </>
   );
 };

@@ -1,6 +1,6 @@
 import "app/index.css";
 import styles from "./HeaderOrder.module.scss";
-import { Logo } from "shared/logo/Logo";
+import { Logo } from "shared/ui/logo/Logo";
 import { SiteInfo } from "entities/site-info";
 
 export const HeaderOrder = () => {
