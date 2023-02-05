@@ -19,9 +19,9 @@ export const Header = () => {
           <Logo />
           <Button onClick={() => setVisible(!visible)} classes={styles.button}>
             {visible ? (
-              <img src={burgerClose} alt="Закрити навігацію" />
-            ) : (
               <img src={burger} alt="Відкрити навігацію" />
+            ) : (
+              <img src={burgerClose} alt="Закрити навігацію" />
             )}
           </Button>
           <SideNavigation visible={visible} />

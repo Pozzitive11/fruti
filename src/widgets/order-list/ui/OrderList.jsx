@@ -10,7 +10,7 @@ import {
   mapProductsForSumUp,
 } from "features/calculate-products-quantity/lib/utils";
 
-export default function OrderList({ classes }) {
+export function OrderList({ classes }) {
   const [cartProducts] = useCart();
 
   const products = useSelector((state) => state.products.products);

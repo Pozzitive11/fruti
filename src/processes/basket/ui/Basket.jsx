@@ -7,7 +7,7 @@ import { Button } from "shared/ui/button/Button";
 import { Modal } from "shared/ui/modal/Modal";
 
 import styles from "./Basket.module.scss";
-import OrderList from "widgets/order-list/ui/OrderList";
+import { OrderList } from "widgets/order-list";
 
 export const Basket = () => {
   const [modal, setModal] = useState(false);
@@ -31,12 +31,3 @@ export const Basket = () => {
     </>
   );
 };
-
-// const [products, setProducts] = useState([]);
-
-// useEffect(() => {
-//   const getProducts = async () => {
-//     setProducts(await getProductsData());
-//   };
-//   getProducts();
-// }, []);

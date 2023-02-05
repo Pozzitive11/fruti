@@ -1,24 +1,59 @@
-import { Input } from "shared/ui/input/Input";
+import cn from "classnames";
+import { Field } from "formik";
 import styles from "./Contacts.module.scss";
 
-export const Contacts = () => {
+export const Contacts = ({ errors, touched }) => {
   return (
     <div className={styles.contacts__list}>
       <label className={styles.contacts__label}>
         Прізвище
-        <Input required classes={styles.contacts__input} />
+        <Field
+          name="secondName"
+          className={cn(styles.contacts__input, {
+            [styles.contacts__input_error]:
+              errors.secondName && touched.secondName,
+          })}
+        />
+        {errors.secondName && touched.secondName && (
+          <div className={styles.contacts__error}>{errors.secondName}</div>
+        )}
       </label>
       <label className={styles.contacts__label}>
         Ім’я
-        <Input required classes={styles.contacts__input} />
+        <Field
+          name="firstName"
+          className={cn(styles.contacts__input, {
+            [styles.contacts__input_error]:
+              errors.firstName && touched.firstName,
+          })}
+        />
+        {errors.firstName && touched.firstName && (
+          <div className={styles.contacts__error}>{errors.firstName}</div>
+        )}
       </label>
       <label className={styles.contacts__label}>
         Мобільний телефон
-        <Input required classes={styles.contacts__input} />
+        <Field
+          name="phone"
+          className={cn(styles.contacts__input, {
+            [styles.contacts__input_error]: errors.phone && touched.phone,
+          })}
+        />
+        {errors.phone && touched.phone && (
+          <div className={styles.contacts__error}>{errors.phone}</div>
+        )}
       </label>
       <label className={styles.contacts__label}>
         Адреса
-        <Input required classes={styles.contacts__input} />
+        <Field
+          name="address"
+          className={cn(styles.contacts__input, {
+            [styles.contacts__input_error]: errors.address && touched.address,
+          })}
+        />
+        {errors.address && touched.address && (
+          <div className={styles.contacts__error}>{errors.address}</div>
+        )}
       </label>
     </div>
   );

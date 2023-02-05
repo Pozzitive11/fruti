@@ -32,6 +32,7 @@ import cooperation from "./about-page/cooperation.png";
 import payment from "./delivery-page/payment.png";
 
 import burgerClose from "./burger-close.svg";
+import error from "./error.svg";
 
 export {
   about1,
@@ -59,4 +60,5 @@ export {
   cooperation,
   payment,
   burgerClose,
+  error,
 };

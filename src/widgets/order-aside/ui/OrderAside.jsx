@@ -44,7 +44,7 @@ export const OrderAside = () => {
           {priceWithDelivery.toFixed(2)} грн
         </span>
       </div>
-      <Button classes={styles.order__aside_button}>
+      <Button type="submit" classes={styles.order__aside_button}>
         Замовлення підтверджую
       </Button>
     </aside>

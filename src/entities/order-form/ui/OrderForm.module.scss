@@ -1,0 +1,149 @@
+@import "shared/styles/mixins";
+
+
+.form {
+  &__subtitle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-family-montserrat);
+    font-style: normal;
+    font-weight: var(--font-weight-semibold);
+    font-size: 18px;
+    line-height: 22px;
+    &::before {
+      @include flex-all-center;
+      content: "1";
+      background-color: var(--color-orange);
+      width: 25px;
+      height: 25px;
+      color: var(--color-white);
+      border-radius: 100%;
+      font-size: 17px;
+    }
+  }
+  &__contacts {
+    margin-bottom: 58px;
+    &_subtitle {
+      &::before {
+        content: "1";
+      }
+    }
+    &_inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 26px;
+    }
+  }
+
+  &__information {
+    margin-bottom: 29px;
+    &_subtitle {
+      margin-bottom: 20px;
+      &::before {
+        content: "2";
+      }
+    }
+  }
+
+  &__payment {
+    padding-bottom: 50px;
+    &_subtitle {
+      margin-bottom: 17px;
+      &::before {
+        content: "3";
+      }
+    }
+    &_radio {
+      -webkit-appearance: none;
+      appearance: none;
+      margin: 0;
+
+      font: inherit;
+      color: currentColor;
+      width: 1.15em;
+      height: 1.15em;
+      border: 0.15em solid currentColor;
+      border-radius: 50%;
+      transform: translateY(-0.075em);
+
+      display: grid;
+      place-content: center;
+      &::before {
+        content: "";
+        width: 0.65em;
+        height: 0.65em;
+        border-radius: 50%;
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em var(--form-control-color);
+        /* Windows High Contrast Mode */
+        background-color: var(--color-orange);
+      }
+      &:checked::before {
+        transform: scale(1);
+      }
+    }
+    &_label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      &:not(:last-child) {
+        margin-bottom: 19px;
+      }
+    }
+  }
+}
+.information_comment {
+   &__title {
+     margin-bottom: 16px;
+     font-family: var(--font-family-montserrat);
+     font-style: normal;
+     font-weight: var(--font-weight-semibold);
+     font-size: 18px;
+     line-height: 22px;
+   }
+ 
+   &__textarea {
+     margin-bottom: 27px;
+     height: 94px;
+   }
+ 
+   &__label {
+     display: flex;
+     gap: 10px;
+   }
+ 
+   &__checkbox {
+     -webkit-appearance: none;
+     appearance: none;
+     margin: 0;
+ 
+     display: grid;
+     place-content: center;
+     font: inherit;
+     color: currentColor;
+     width: 1.15em;
+     height: 1.15em;
+     border: 0.15em solid currentColor;
+     border-radius: 0.15em;
+     transform: translateY(-0.075em);
+ 
+     &::before {
+       content: "";
+       width: 0.65em;
+       height: 0.65em;
+       clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+       transform: scale(0);
+       transform-origin: bottom left;
+       transition: 120ms transform ease-in-out;
+       box-shadow: inset 1em 1em var(--form-control-color);
+       /* Windows High Contrast Mode */
+       background-color: CanvasText;
+     }
+     &:checked::before {
+       transform: scale(1);
+     }
+   }
+ }
+ 

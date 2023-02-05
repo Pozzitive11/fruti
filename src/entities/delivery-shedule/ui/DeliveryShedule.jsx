@@ -1,36 +1,11 @@
 import styles from "./DeliveryShedule.module.scss";
 import { Input } from "shared/ui/input/Input";
+import { months } from "../config/constants";
 
-const months = [
-  "Січня",
-  "Лютого",
-  "Березня",
-  "Квітня",
-  "Травня",
-  "Червня",
-  "Липня",
-  "Серпня",
-  "September",
-  "Жовтня",
-  "Листопада",
-  "Грудня",
-];
-
-const time = [
-  "time1",
-  "time2",
-  "time3",
-  "time4",
-  "time5",
-  "time6",
-  "time7",
-  "time8",
-  "time9",
-];
 export const DeliveryShedule = () => {
   const sheduleDays = ["Завтра"];
 
-  for (let i = 0; i < 3; i++) {
+  for (let i = 1; i < 4; i++) {
     const d = new Date();
     let month = months[d.getMonth()];
     let day = `${d.getDate() + i} ${month}`;
