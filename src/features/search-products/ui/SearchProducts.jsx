@@ -5,13 +5,15 @@ import { SearchCard } from "entities/search-card";
 
 import styles from "./SearchProducts.module.scss";
 import "shared/styles/search-products.scss";
-import { Button } from "shared/ui/button/Button";
 
 export const SearchProducts = ({ products }) => {
-  const [searchingProducts, setSearchingProducts] = useState("");
+  const [searchingProducts, setSearchingProducts] =
+    useState("");
 
   const filteredProduct = products.filter((item) => {
-    return item.title.toLowerCase().includes(searchingProducts.toLowerCase());
+    return item.title
+      .toLowerCase()
+      .includes(searchingProducts.toLowerCase());
   });
 
   const handleSearchInput = ({ target }) => {
@@ -20,24 +22,26 @@ export const SearchProducts = ({ products }) => {
 
   return (
     <div className="search">
-        <Input
-          onChange={handleSearchInput}
-          value={searchingProducts}
-          placeholder="Томати, огірок..."
-          classes={styles.input}
-        />
+      <Input
+        onChange={handleSearchInput}
+        value={searchingProducts}
+        placeholder="Томати, огірок..."
+        classes={styles.input}
+      />
       {searchingProducts && (
         <ul className={styles.search__result}>
-          {filteredProduct.map(({ title, price, img, id, type }) => (
-            <SearchCard
-              key={id}
-              title={title}
-              price={price}
-              img={img}
-              id={id}
-              type={type}
-            />
-          ))}
+          {filteredProduct.map(
+            ({ title, price, img, id, type }) => (
+              <SearchCard
+                key={id}
+                title={title}
+                price={price}
+                img={img}
+                id={id}
+                type={type}
+              />
+            )
+          )}
         </ul>
       )}
     </div>

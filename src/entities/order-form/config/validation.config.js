@@ -5,7 +5,7 @@ export const validationSchema = yup.object().shape({
   firstName: yup.string().required("Введіть ім'я"),
   phone: yup
     .string()
-    .phone("IN", true, `Введіть коректний номер телефону`)
-    .required("Введіть номер телефону"),
-  address: yup.string().required("Введіть фдресу"),
+    .phone("IN", false, "Введіть коректний номер телефону")
+    .required(),
+  address: yup.string().required("Введіть адресу"),
 });

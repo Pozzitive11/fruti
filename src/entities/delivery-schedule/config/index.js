@@ -7,7 +7,7 @@ export const months = [
   "Червня",
   "Липня",
   "Серпня",
-  "September",
+  "Вересня",
   "Жовтня",
   "Листопада",
   "Грудня",
@@ -24,3 +24,11 @@ export const time = [
   "time8",
   "time9",
 ];
+
+export const hours = [
+  "11:00 - 14:00",
+  "14:00 - 17:00",
+  "17:00 - 20:00",
+];
+
+export const days = [1, 2, 3, 4];

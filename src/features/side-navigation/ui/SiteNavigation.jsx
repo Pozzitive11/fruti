@@ -10,7 +10,7 @@ export const SideNavigation = ({ visible }) => {
   }
   return (
     <div className={rootClasses.join(" ")}>
-      <nav className={styles.side_nav} >
+      <nav className={styles.side_nav}>
         <ul className={styles.side_nav__list}>
           <li className={styles.side_nav__item}>
             <a href="/#vegetables" className={styles.side_nav__link}>
@@ -43,8 +43,8 @@ export const SideNavigation = ({ visible }) => {
         <a className={styles.info__phone} href={"tel:0678337139"}>
           0678337139
         </a>
-        <p className={styles.info__shedule}>Працюємо Пн-Сб,</p>
-        <p className={styles.info__shedule}>Нд-вихідний</p>
+        <p className={styles.info__schedule}>Працюємо Пн-Сб,</p>
+        <p className={styles.info__schedule}>Нд-вихідний</p>
       </address> */}
       <SiteInfo />
     </div>

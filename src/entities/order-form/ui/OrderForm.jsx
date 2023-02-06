@@ -5,7 +5,7 @@ import { OrderAside } from "widgets/order-aside";
 import { Form, Formik } from "formik";
 import cn from "classnames";
 import { Contacts } from "entities/contacts";
-import { DeliveryShedule } from "entities/delivery-shedule";
+import { DeliverySchedule } from "entities/delivery-schedule";
 import { Textarea } from "shared/ui/textarea/Textarea";
 import { validationSchema } from "../config/validation.config";
 
@@ -46,7 +46,7 @@ export const OrderForm = () => {
             >
               Інформація про доставку
             </h2>
-            <DeliveryShedule />
+            <DeliverySchedule />
             <div
               className={cn(
                 styles.form__information_comment,
