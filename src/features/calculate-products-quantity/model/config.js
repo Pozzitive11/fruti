@@ -19,13 +19,11 @@ export const addProduct = ({
     ++productsToSave[currentProductIndex].quantity;
   }
   setProducts(productsToSave);
-  //   localStorage.setItem("products", JSON.stringify(products));
 };
 
 export const minusProduct = ({
   currentProductIndex,
   currentProducts,
-  id,
   setProducts,
 }) => {
   if (currentProductIndex === -1) {
@@ -33,13 +31,15 @@ export const minusProduct = ({
   }
   let productsToSave = deepClone(currentProducts);
 
-  if (productsToSave[currentProductIndex].quantity === 1) {
-    productsToSave = productsToSave.filter((product) => product.id !== id);
-  } else {
-    --productsToSave[currentProductIndex].quantity;
-  }
+  --productsToSave[currentProductIndex].quantity;
   setProducts(productsToSave);
-  //   localStorage.setItem("products", JSON.stringify(products));
+};
+
+export const deleteProduct = ({ currentProducts, id, setProducts }) => {
+  let productsToSave = deepClone(currentProducts);
+
+  productsToSave = productsToSave.filter((product) => product.id !== id);
+  setProducts(productsToSave);
 };
 
 export const getProductQuantityById = (products, productId) => {

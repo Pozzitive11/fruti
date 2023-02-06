@@ -3,11 +3,18 @@ import { useEffect, useState } from "react";
 import { Button } from "shared/ui/button/Button";
 import { Modal } from "shared/ui/modal/Modal";
 
-import { minusButton, plusButton, deleteButton, basketButton } from "assets";
+import {
+  minusButton,
+  plusButton,
+  deleteButton,
+  basketButton,
+  deleteProductImg,
+} from "assets";
 import {
   addProduct,
   minusProduct,
   getProductQuantityById,
+  deleteProduct,
 } from "features/calculate-products-quantity";
 
 import styles from "./CalculateProductsQuantity.module.scss";
@@ -52,7 +59,6 @@ export function CalculateProductsQuantity({ id, price }) {
         minusProduct({
           currentProductIndex,
           currentProducts: cartProducts,
-          id,
           setProducts: setCartProducts,
         });
         closeModal();
@@ -91,6 +97,9 @@ export function CalculateProductsQuantity({ id, price }) {
               <img src={plusButton} alt={"Плюс"} />
             </Button>
           </div>
+          <Button onClick={openModal} classes="number-of-products_delete">
+            <img src={deleteProductImg} alt="Видалити продукт" />
+          </Button>
         </div>
       ) : (
         <div className={styles.buy}>
@@ -113,7 +122,14 @@ export function CalculateProductsQuantity({ id, price }) {
         <div className={styles.modal__buttons}>
           <Button
             classes={styles.button}
-            onClick={handleProduct}
+            onClick={() => {
+              deleteProduct({
+                currentProducts: cartProducts,
+                id,
+                setProducts: setCartProducts,
+              });
+              closeModal();
+            }}
             data-button="minus"
           >
             Так

@@ -70,10 +70,14 @@
     &__wrapper {
       width: 200px;
     }
+    &_delete {
+      display: none;
+    }
   }
 }
 
 .number-of-products {
+  position: relative;
   &__price {
     font-weight: var(--font-weigth-bold);
     font-size: 24px;
@@ -87,5 +91,10 @@
 
   &__count {
     display: none;
+  }
+  &_delete {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 }
