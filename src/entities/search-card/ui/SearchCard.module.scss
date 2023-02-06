@@ -13,7 +13,9 @@
       }
     }
     &_item {
-      @include flex-all-sb;
+      display: grid;
+      grid-template-columns: auto auto 380px;
+      align-items: center;
       @include minitablet {
         justify-content: initial;
         flex-wrap: wrap;
@@ -22,7 +24,7 @@
       &:not(:last-child) {
         margin-bottom: 16px;
         @include minitablet {
-         margin-bottom: 20px;
+          margin-bottom: 20px;
         }
       }
 
