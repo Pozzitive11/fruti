@@ -19,7 +19,7 @@
     }
     &__price-static {
       display: block;
-      font-weight: var(--font-weigth-bold);
+      font-weight: var(--font-weight-bold);
       font-size: 24px;
       line-height: 27px;
       margin-bottom: 4px;
@@ -80,7 +80,7 @@
 .number-of-products {
   position: relative;
   &__price {
-    font-weight: var(--font-weigth-bold);
+    font-weight: var(--font-weight-bold);
     font-size: 24px;
     line-height: 27px;
     margin-bottom: 15px;

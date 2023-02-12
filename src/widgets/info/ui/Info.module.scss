@@ -8,7 +8,7 @@
   margin-top: 64px;
 
   &__title {
-    font-weight: var(--font-weigth-bold);
+    font-weight: var(--font-weight-bold);
     font-size: 40px;
     margin-bottom: 32px;
   }
@@ -23,12 +23,12 @@
     }
 
     &_item {
-      font-weight: var(--font-weigth-ligth);
+      font-weight: var(--font-weight-ligth);
       line-height: 22px;
       margin-bottom: 16px;
 
       &:last-child {
-        font-weight: var(--font-weigth-bold);
+        font-weight: var(--font-weight-bold);
       }
     }
   }

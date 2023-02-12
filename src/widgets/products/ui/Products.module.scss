@@ -2,7 +2,7 @@
   margin-bottom: 88px;
 
   &__title {
-    font-weight: var(--font-weigth-bold);
+    font-weight: var(--font-weight-bold);
     font-size: 64px;
     line-height: 78px;
     text-align: center;
@@ -33,5 +33,4 @@
   &:first-child {
     margin-top: 88px;
   }
-  
 }

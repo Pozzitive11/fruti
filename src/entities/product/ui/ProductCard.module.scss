@@ -1,0 +1,40 @@
+@import "shared/styles/mixins";
+
+.product__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 270px;
+
+  &_img {
+    margin-bottom: 24px;
+  }
+
+  &_name {
+    font-weight: var(--font-weight-bold);
+    font-size: 24px;
+    line-height: 27px;
+    margin-bottom: 8px;
+  }
+
+  .button {
+    background-color: var(--color-orange-light);
+    border-radius: 6px;
+    padding: 10px 22px;
+  }
+
+  &_origin {
+    margin-bottom: 16px;
+  }
+
+  &_price {
+    font-weight: var(--font-weight-bold);
+    font-size: 24px;
+    line-height: 27px;
+    margin-bottom: 15px;
+  }
+
+  &_bottom {
+    @include flex-all-sb;
+  }
+}

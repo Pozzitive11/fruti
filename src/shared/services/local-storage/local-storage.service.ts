@@ -1,4 +1,4 @@
-import { Cart } from "shared/@types";
+import { Cart } from "entities/cart/models";
 import { v4 as uuid } from "uuid";
 
 class LocalStorageService<T> {
@@ -14,7 +14,7 @@ class LocalStorageService<T> {
 
   setValue(value: T): void {
     localStorage.setItem(this.localStorageItemKey, JSON.stringify(value));
-    Object.values(this.observers).forEach((observer) => observer(value)); // ???
+    Object.values(this.observers).forEach((observer) => observer(value));
   }
 
   subscribe(observer: (localStorageItem: T) => void): string {
