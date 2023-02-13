@@ -57,24 +57,3 @@ export const SearchProducts: FC<SearchProductsProps> = ({
   );
 };
 
-// <li className={styles.search__result_item} key={title}>
-//   <img
-//     className={styles.search__result_img}
-//     src={require(`assets/${img}`)}
-//     alt={title}
-//   />
-//   <h2 className={styles.search__result_name}>{title}</h2>
-//   <NumberOfProducts
-//     deleteFromBasket={deleteFromBasket}
-//     addToBasket={addToBasket}
-//     addProduct={addProduct}
-//     minusProduct={minusProduct}
-//     quantity={quantity}
-//   />
-//   <p className={styles.search__result_price}>
-//     {(price * (quantity || 1)).toFixed(2)} грн
-//   </p>
-//   <Button classes={styles.button} onClick={addToBasket}>
-//     <img src={basketButton} alt="Додати товар до кошику" />
-//   </Button>
-// </li>

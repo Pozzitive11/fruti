@@ -48,6 +48,4 @@ const productsSlice = createSlice({
   },
 });
 
-// export const { getProducts } = productsSlice.actions;
-
 export default productsSlice.reducer;

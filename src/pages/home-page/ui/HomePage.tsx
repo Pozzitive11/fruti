@@ -1,5 +1,4 @@
 import { FC, useEffect } from "react";
-// import styles from "./HomePage.module.scss";
 
 import { getProductsRedux } from "app/store/productsSlice";
 import { SearchProducts } from "features/search-products";

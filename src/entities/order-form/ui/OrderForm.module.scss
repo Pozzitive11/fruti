@@ -77,7 +77,6 @@
         transform: scale(0);
         transition: 120ms transform ease-in-out;
         box-shadow: inset 1em 1em var(--form-control-color);
-        /* Windows High Contrast Mode */
         background-color: var(--color-orange);
       }
       &:checked::before {
@@ -138,7 +137,6 @@
        transform-origin: bottom left;
        transition: 120ms transform ease-in-out;
        box-shadow: inset 1em 1em var(--form-control-color);
-       /* Windows High Contrast Mode */
        background-color: CanvasText;
      }
      &:checked::before {
