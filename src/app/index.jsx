@@ -12,9 +12,11 @@ import { DeliveryPage } from "pages/delivery-page";
 import { Layout } from "shared/ui/layout/Layout";
 import { OrderPage } from "pages/order-page";
 
+const REPO_NAME = "fruti";
+
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={`/${REPO_NAME}/`}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
