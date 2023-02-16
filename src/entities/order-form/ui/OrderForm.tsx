@@ -20,9 +20,7 @@ export const OrderForm = () => {
           phone: "+380",
           address: "",
         }}
-        onSubmit={(values) => {
-          alert(JSON.stringify(values, null, 2));
-        }}
+        onSubmit={(values) => {}}
       >
         {({ errors, touched }) => (
           <Form>
@@ -109,7 +107,7 @@ export const OrderForm = () => {
                 Готівкою при отриманні
               </label>
             </div>
-            <OrderAside />
+            <OrderAside errors={errors} />
           </Form>
         )}
       </Formik>

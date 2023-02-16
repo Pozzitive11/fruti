@@ -7,9 +7,9 @@ import { useState } from "react";
 
 export const OrderModal = () => {
   const [modal, setModal] = useState<boolean>(false);
-
+  
   const clearStorage = () => {
-    localStorage.clear();
+    localStorage.removeItem('cart');
   };
   return (
     <>

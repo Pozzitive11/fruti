@@ -15,7 +15,7 @@ import { CartItem } from "entities/cart/ui/CartItem";
 
 interface OrderListProps {
   classes?: any;
-};
+}
 
 export const OrderList: FC<OrderListProps> = ({
   classes,
@@ -72,7 +72,7 @@ export const OrderList: FC<OrderListProps> = ({
         <Loader />
       )}
       <div className={styles.order__fullprice}>
-        Сума: {fullprice} грн
+        Сума: {fullprice.toFixed(2)} грн
       </div>
     </div>
   );

@@ -8,19 +8,19 @@ export const Navigation: FC = () => {
       <ul className={styles.nav__list}>
         <li className={styles.nav__item}>
           <a
-            href="/#vegetables"
+            href="/fruti/#vegetables"
             className={styles.nav__link}
           >
             Овочі
           </a>
         </li>
         <li className={styles.nav__item}>
-          <a href="/#fruits" className={styles.nav__link}>
+          <a href="/fruti/#fruits" className={styles.nav__link}>
             Фрукти
           </a>
         </li>
         <li className={styles.nav__item}>
-          <a href="/#green" className={styles.nav__link}>
+          <a href="/fruti/#green" className={styles.nav__link}>
             Зелень
           </a>
         </li>

@@ -4,14 +4,14 @@ import { days, hours, months } from "../config";
 import { uuidv4 } from "@firebase/util";
 import { FC } from "react";
 
-interface scheduleDaysArg {
+interface ScheduleDays {
   id: string;
   deliveryDay: string;
   hours: string[];
 }
 
 export const DeliverySchedule: FC = () => {
-  const scheduleDays: scheduleDaysArg[] = [];
+  const scheduleDays: ScheduleDays[] = [];
   days.forEach((day) => {
     const date = new Date();
     const month = months[date.getMonth()];
@@ -36,6 +36,7 @@ export const DeliverySchedule: FC = () => {
               <Input
                 type="radio"
                 name="time"
+                defaultChecked={true}
                 id={id + hour}
                 classes={styles.information_schedule__input}
               />

@@ -10,8 +10,15 @@ import styles from "./OrderAside.module.scss";
 import { FC } from "react";
 import { CartItemType } from "entities/cart/models/cart.model";
 import { Product } from "entities/product";
+import { ValidationErrors } from "entities/order-form";
 
-export const OrderAside: FC = () => {
+interface OrderAsideProps {
+  errors: ValidationErrors;
+}
+
+export const OrderAside: FC<OrderAsideProps> = ({
+  errors,
+}) => {
   const [cartProducts] = useCart();
 
   const products = useAppSelector(
@@ -35,30 +42,34 @@ export const OrderAside: FC = () => {
   }
 
   const priceWithDelivery = fullprice + +deliveryPrice;
-
+  
   return (
     <>
       <aside className={styles.order__aside}>
         <h2 className={styles.order__aside_title}>Разом</h2>
         <div className={styles.order__aside_worth}>
-          Товар на суму{" "}
+          Товар на суму
           <span className={styles.order__aside_price}>
-            {fullprice} грн
+            {fullprice.toFixed(2)} грн
           </span>
         </div>
         <div className={styles.order__aside_delivery}>
-          Вартість доставки{" "}
+          Вартість доставки
           <span className={styles.order__aside_price}>
             {deliveryPrice} грн
           </span>
         </div>
         <div className={styles.order__aside_paid}>
-          До сплати{" "}
+          До сплати
           <span className={styles.order__aside_price}>
             {priceWithDelivery.toFixed(2)} грн
           </span>
         </div>
-        <OrderModal />
+        {Object.keys(errors).length === 0 ? (
+           <OrderModal />
+           ) : (
+           <div>Заповніть усі поля</div>
+        )}
       </aside>
     </>
   );

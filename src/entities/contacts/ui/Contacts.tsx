@@ -1,17 +1,23 @@
 import cn from "classnames";
+import {
+  ValidationErrors,
+  ValidationTouched,
+} from "entities/order-form";
 import { Field } from "formik";
 import { FC } from "react";
 import styles from "./Contacts.module.scss";
 
 interface ContactsProps {
-  errors: any;
-  touched: any;
-};
+  errors: ValidationErrors;
+  touched: ValidationTouched;
+}
 
 export const Contacts: FC<ContactsProps> = ({
   errors,
   touched,
 }) => {
+  console.log(touched);
+
   return (
     <div className={styles.contacts__list}>
       <label className={styles.contacts__label}>
