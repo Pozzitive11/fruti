@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/fruti/static/css/main.426cfa69.css",
-    "main.js": "/fruti/static/js/main.4e1cf739.js",
+    "main.js": "/fruti/static/js/main.3858d60f.js",
     "static/media/artichoke.jpg": "/fruti/static/media/artichoke.c84aab4137e87e788e58.jpg",
     "static/media/carrot.jpg": "/fruti/static/media/carrot.787697a8bda580f06ac5.jpg",
     "static/media/orange.jpg": "/fruti/static/media/orange.7e3d5b6221abbed3d975.jpg",
@@ -44,10 +44,10 @@
     "static/media/input-search.svg": "/fruti/static/media/input-search.d0fafdaed9f36a47ae68.svg",
     "index.html": "/fruti/index.html",
     "main.426cfa69.css.map": "/fruti/static/css/main.426cfa69.css.map",
-    "main.4e1cf739.js.map": "/fruti/static/js/main.4e1cf739.js.map"
+    "main.3858d60f.js.map": "/fruti/static/js/main.3858d60f.js.map"
   },
   "entrypoints": [
     "static/css/main.426cfa69.css",
-    "static/js/main.4e1cf739.js"
+    "static/js/main.3858d60f.js"
   ]
 }
