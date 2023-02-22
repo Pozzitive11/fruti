@@ -1,7 +1,6 @@
 import { Cart, ProductToBuy } from "entities/cart/models";
 import { Product } from "entities/product";
 
-
 export const calculateFullprice = (
   products: ProductToBuy[]
 ): number =>
@@ -24,7 +23,6 @@ export const mapProductsForSumUp = (
     const originalProduct = dbProducts?.find(
       (product) => id === product.id
     );
-
     return {
       quantity,
       price: Number(originalProduct?.price),

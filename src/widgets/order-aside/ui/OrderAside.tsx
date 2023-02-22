@@ -7,7 +7,7 @@ import { useCart } from "shared/hooks";
 import { useAppSelector } from "shared/hooks/redux-hooks";
 import { deliveryPrice } from "../config";
 import styles from "./OrderAside.module.scss";
-import { FC } from "react";
+import { FC, useMemo } from "react";
 import { CartItemType } from "entities/cart/models/cart.model";
 import { Product } from "entities/product";
 import { ValidationErrors } from "entities/order-form";
@@ -34,15 +34,16 @@ export const OrderAside: FC<OrderAsideProps> = ({
       ) as Product
   );
 
-  let fullprice = 0;
-  if (isProductsLoading) {
-    fullprice = calculateFullprice(
-      mapProductsForSumUp(productsToBuy, cartProducts)
-    );
-  }
+  const fullprice = useMemo(() => {
+    if (isProductsLoading) {
+      return calculateFullprice(
+        mapProductsForSumUp(productsToBuy, cartProducts)
+      );
+    }
+  }, [productsToBuy, cartProducts, isProductsLoading]);
 
-  const priceWithDelivery = fullprice + +deliveryPrice;
-  
+  const priceWithDelivery = fullprice ?? 0 + deliveryPrice;
+
   return (
     <>
       <aside className={styles.order__aside}>
@@ -50,7 +51,7 @@ export const OrderAside: FC<OrderAsideProps> = ({
         <div className={styles.order__aside_worth}>
           Товар на суму
           <span className={styles.order__aside_price}>
-            {fullprice.toFixed(2)} грн
+            {fullprice?.toFixed(2)} грн
           </span>
         </div>
         <div className={styles.order__aside_delivery}>
@@ -66,9 +67,9 @@ export const OrderAside: FC<OrderAsideProps> = ({
           </span>
         </div>
         {Object.keys(errors).length === 0 ? (
-           <OrderModal />
-           ) : (
-           <div>Заповніть усі поля</div>
+          <OrderModal />
+        ) : (
+          <div>Заповніть усі поля</div>
         )}
       </aside>
     </>

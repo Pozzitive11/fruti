@@ -18,7 +18,7 @@ export const DeliverySchedule: FC = () => {
 
     const deliveryDay = `${date.getDate() + day} ${month}`;
     scheduleDays.push({ id: uuidv4(), deliveryDay, hours });
-   });
+  });
   return (
     <div className={styles.information_schedule}>
       {scheduleDays.map(({ id, deliveryDay, hours }) => (

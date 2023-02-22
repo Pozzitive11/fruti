@@ -16,8 +16,6 @@ export const Contacts: FC<ContactsProps> = ({
   errors,
   touched,
 }) => {
-  console.log(touched);
-
   return (
     <div className={styles.contacts__list}>
       <label className={styles.contacts__label}>

@@ -7,10 +7,12 @@ import {
   calculateFullprice,
   mapProductsForSumUp,
 } from "features/calculate-products-quantity/lib/utils";
-import { FC } from "react";
+import React, {
+  FC,
+  useMemo,
+} from "react";
 import { useAppSelector } from "shared/hooks/redux-hooks";
 import { Product } from "entities/product";
-import { CartItemType } from "entities/cart/models/cart.model";
 import { CartItem } from "entities/cart/ui/CartItem";
 
 interface OrderListProps {
@@ -30,18 +32,19 @@ export const OrderList: FC<OrderListProps> = ({
   );
 
   const productsToBuy = cartProducts?.map(
-    (cartProduct: CartItemType) =>
+    (cartProduct) =>
       products?.find(
         (product) => cartProduct.id === product.id
       ) as Product
   );
 
-  let fullprice = 0;
-  if (isProductsLoading) {
-    fullprice = calculateFullprice(
-      mapProductsForSumUp(productsToBuy, cartProducts)
-    );
-  }
+  const fullprice = useMemo(() => {
+    if (isProductsLoading) {
+      return calculateFullprice(
+        mapProductsForSumUp(productsToBuy, cartProducts)
+      );
+    }
+  }, [productsToBuy, cartProducts, isProductsLoading]);
 
   return (
     <div className={styles.order__wrapper}>
@@ -72,8 +75,81 @@ export const OrderList: FC<OrderListProps> = ({
         <Loader />
       )}
       <div className={styles.order__fullprice}>
-        Сума: {fullprice.toFixed(2)} грн
+        Сума: {fullprice?.toFixed(2)} грн
       </div>
     </div>
   );
 };
+
+// export const OrderList = React.memo(
+//   ({ classes }: OrderListProps) => {
+//     const [cartProducts] = useCart();
+//     //   const [fullprice, setFullPrice] = useState<number>(0);
+
+//     const products = useAppSelector(
+//       (state) => state.products.products
+//     );
+//     const isProductsLoading = useAppSelector(
+//       (state) => state.products.isloading
+//     );
+
+//     const productsToBuy = cartProducts?.map(
+//       (cartProduct) =>
+//         products?.find(
+//           (product) => cartProduct.id === product.id
+//         ) as Product
+//     );
+
+//     let fullprice = 0;
+//     if (isProductsLoading) {
+//       fullprice = calculateFullprice(
+//         mapProductsForSumUp(productsToBuy, cartProducts)
+//       );
+//     }
+//     console.log(fullprice);
+
+//     //   useEffect(() => {
+//     //     if (isProductsLoading) {
+//     //       setFullPrice(
+//     //         calculateFullprice(
+//     //           mapProductsForSumUp(productsToBuy, cartProducts)
+//     //         )
+//     //       );
+//     //     }
+//     //   }, [productsToBuy, cartProducts, isProductsLoading]);
+
+//     return (
+//       <div className={styles.order__wrapper}>
+//         {isProductsLoading ? (
+//           <ul className={cn(classes, styles.order__list)}>
+//             {productsToBuy?.map(
+//               ({
+//                 id,
+//                 img,
+//                 price,
+//                 origin,
+//                 title,
+//                 type,
+//               }: Product) => (
+//                 <CartItem
+//                   key={id}
+//                   id={id}
+//                   type={type}
+//                   img={img}
+//                   price={price}
+//                   origin={origin}
+//                   title={title}
+//                 />
+//               )
+//             )}
+//           </ul>
+//         ) : (
+//           <Loader />
+//         )}
+//         <div className={styles.order__fullprice}>
+//           Сума: {fullprice.toFixed(2)} грн
+//         </div>
+//       </div>
+//     );
+//   }
+// );

@@ -6,10 +6,9 @@ import { Product, SearchCard } from "entities/product";
 import styles from "./SearchProducts.module.scss";
 import "shared/styles/search-products.scss";
 
-
 interface SearchProductsProps {
   products: Product[];
-};
+}
 
 export const SearchProducts: FC<SearchProductsProps> = ({
   products,
@@ -17,11 +16,11 @@ export const SearchProducts: FC<SearchProductsProps> = ({
   const [searchingProducts, setSearchingProducts] =
     useState<string>("");
 
-  const filteredProduct = products.filter((item) => {
-    return item?.title
-      .toLowerCase() 
-      .includes(searchingProducts.toLowerCase());
-  });
+  const filteredProduct = products.filter((product) =>
+    product?.title
+      .toLowerCase()
+      .startsWith(searchingProducts.toLowerCase())
+  );
 
   const handleSearchInput = (
     e: React.ChangeEvent<HTMLInputElement>
@@ -56,4 +55,3 @@ export const SearchProducts: FC<SearchProductsProps> = ({
     </div>
   );
 };
-

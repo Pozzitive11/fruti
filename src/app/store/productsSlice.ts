@@ -15,8 +15,7 @@ interface ProductState {
 export const getProductsRedux = createAsyncThunk<Product[]>(
   "products/getProductsData",
   async function () {
-    const response = await getData("/products");
-    return response;
+    return await getData("/products");
   }
 );
 
