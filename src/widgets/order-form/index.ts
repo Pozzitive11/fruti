@@ -4,4 +4,4 @@ export { validationSchema } from "./config";
 export type {
   ValidationErrors,
   ValidationTouched,
-} from "./models/form.models";
+} from "../../entities/order/models/form.models";

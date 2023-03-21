@@ -10,7 +10,7 @@ interface ProductsProps {
   title: string;
   products: Product[];
   isProductsLoading: boolean;
-};
+}
 export const Products: FC<ProductsProps> = ({
   id,
   title,

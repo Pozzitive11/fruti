@@ -10,7 +10,7 @@ import styles from "./OrderAside.module.scss";
 import { FC, useMemo } from "react";
 import { CartItemType } from "entities/cart/models/cart.model";
 import { Product } from "entities/product";
-import { ValidationErrors } from "entities/order-form";
+import { ValidationErrors } from "widgets/order-form";
 
 interface OrderAsideProps {
   errors: ValidationErrors;

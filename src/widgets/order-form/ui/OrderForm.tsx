@@ -4,10 +4,9 @@ import { Input } from "shared/ui/input/Input";
 import { OrderAside } from "widgets/order-aside";
 import { Form, Formik } from "formik";
 import cn from "classnames";
-import { Contacts } from "entities/contacts";
-import { DeliverySchedule } from "entities/delivery-schedule";
 import { Textarea } from "shared/ui/textarea/Textarea";
 import { validationSchema } from "../config/validation.config";
+import { Contacts, DeliverySchedule } from "entities/order";
 
 export const OrderForm = () => {
   return (

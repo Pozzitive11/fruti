@@ -21,6 +21,8 @@ export const HomePage: FC = () => {
   const products = useAppSelector(
     (state) => state.products.products
   );
+  console.log(products);
+  
 
   const isProductsLoading = useAppSelector(
     (state) => state.products.isloading

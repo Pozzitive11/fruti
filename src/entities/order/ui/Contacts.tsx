@@ -1,10 +1,8 @@
 import cn from "classnames";
-import {
-  ValidationErrors,
-  ValidationTouched,
-} from "entities/order-form";
+
 import { Field } from "formik";
 import { FC } from "react";
+import { ValidationErrors, ValidationTouched } from "widgets/order-form";
 import styles from "./Contacts.module.scss";
 
 interface ContactsProps {

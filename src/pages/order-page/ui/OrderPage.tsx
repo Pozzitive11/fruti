@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { getProductsRedux } from "app/store/productsSlice";
 import { OrderList } from "widgets/order-list";
-import { OrderForm } from "entities/order-form";
 
 import styles from "./OrderPage.module.scss";
 import { useAppDispatch } from "shared/hooks/redux-hooks";
+import { OrderForm } from "widgets/order-form";
 
 export const OrderPage = () => {
   const dispatch = useAppDispatch();
